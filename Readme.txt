@@ -1,0 +1,2 @@
+﻿#############################################################################################################################################
+Atualmente rodando no swagger,pra acessar basta entrar por esse link após iniciado o projeto:

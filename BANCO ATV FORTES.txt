@@ -1,0 +1,40 @@
+CREATE TABLE [dbo].[Fornecedor](
+	[FornecedorCNPJ] [int] IDENTITY(1,1) NOT NULL,
+	[FornecedorRazao] [varchar](500) NULL,
+	[fornecedorUf] [varchar](100) NULL,
+	[fornecedorEmail] [nvarchar](500) NULL,
+	[fornecedorContato] [varchar](500) NULL,
+ CONSTRAINT [PK_Fornecedor] PRIMARY KEY CLUSTERED
+(
+	[FornecedorCNPJ] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Pedido](
+	[dataPedido] [date] NULL,
+	[valorPedido] [int] NULL,
+	[Produto] [varchar](100) NULL,
+	[qtdeProduto] [int] NULL,
+	[Fornecedor] [varchar](500) NULL,
+	[pedidoId] [int] NOT NULL
+ CONSTRAINT [PK_Pedido] PRIMARY KEY CLUSTERED
+(
+	[pedidoId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[Produto](
+	[cadastroProduto] [date] NULL,
+	[valorProduto] [int]IDENTITY (1,1) NOT NULL,
+	[produtoId] [int] NOT NULL,
+	[produtoDesc] [varchar](500) NULL,
+ CONSTRAINT [PK_Produto] PRIMARY KEY CLUSTERED
+(
+	[produtoId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
